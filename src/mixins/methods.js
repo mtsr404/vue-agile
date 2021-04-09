@@ -14,7 +14,8 @@ const mixin = {
 		},
 
 		disableScroll () {
-			document.ontouchmove = (e) => e.preventDefault()
+      document.addEventListener('touchmove', (e) => e.preventDefault(),{ passive: false })
+			// document.ontouchmove = (e) => e.preventDefault()
 		},
 
 		enableScroll () {

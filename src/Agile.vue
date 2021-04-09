@@ -196,15 +196,15 @@
 
 		mounted () {
 			// Windows resize listener
-			window.addEventListener('resize', this.getWidth)
+			window.addEventListener('resize', this.getWidth,{passive:true})
 
 			// Mouse and touch events
-			this.$refs.track.addEventListener('touchstart', this.handleMouseDown)
-			this.$refs.track.addEventListener('touchend', this.handleMouseUp)
-			this.$refs.track.addEventListener('touchmove', this.handleMouseMove)
-			this.$refs.track.addEventListener('mousedown', this.handleMouseDown)
-			this.$refs.track.addEventListener('mouseup', this.handleMouseUp)
-			this.$refs.track.addEventListener('mousemove', this.handleMouseMove)
+      this.$refs.track.addEventListener('touchstart', this.handleMouseDown,{passive:true})
+			this.$refs.track.addEventListener('touchend', this.handleMouseUp,{passive:true})
+			this.$refs.track.addEventListener('touchmove', this.handleMouseMove,{passive:true})
+			this.$refs.track.addEventListener('mousedown', this.handleMouseDown,{passive:true})
+			this.$refs.track.addEventListener('mouseup', this.handleMouseUp,{passive:true})
+			this.$refs.track.addEventListener('mousemove', this.handleMouseMove,{passive:true})
 
 			// Init
 			this.isSSR = false
